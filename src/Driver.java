@@ -18,16 +18,25 @@ an input file titled "input.txt" and place it in the project directory for the p
 to work correctly. It should be formatted in a table with verticies at the top with
 the corresponding adjecency matrix filled. Entries are seperated by commas.
 
-Example Input:
+Example Input 1:
 
 A,B,C,D,E
-*,6,8,7,*
-6,*,5,3,2
-8,5,*,1,*
-7,3,1,*,4
-*,2,*,4,*
+/,6,8,7,/
+6,/,5,3,2
+8,5,/,1,/
+7,3,1,/,4
+/,2,/,4,/
 
-* Represents verticies that are not connected by an edge
+Example Input 2:
+
+A,B,C,D,E
+/,3,/,/,6
+3,/,4,/,2
+/,4,/,/,/
+/,/,/,/,7
+6,2,/,7,/
+
+/ Represents verticies that are not connected by an edge
 
 */
 
