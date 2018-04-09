@@ -3,6 +3,31 @@
 // (powered by Fernflower decompiler)
 //
 
+/*
+Authors: Andrew Smith, Michael Miller, Dylan Lynn
+
+Date submitted: April x, 2018
+
+Overview: Program takes input from input file (input.txt) in the project directory
+and creates different graphs with given adjacency matrix. This graphs are implemented
+using Prim's Algorithm, Kruskal's Algorithm, and Floyd-Warshall's Algorithm. Create
+an input file titled "input.txt" and place it in the project directory for the program
+to work correctly. It should be formatted in a table with verticies at the top with
+the corresponding adjecency matrix filled. Entries are seperated by commas.
+
+Example Input:
+
+A,B,C,D,E
+*,6,8,7,*
+6,*,5,3,2
+8,5,*,1,*
+7,3,1,*,4
+*,2,*,4,*
+
+* Represents verticies that are not connected by an edge
+
+*/
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
