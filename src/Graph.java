@@ -138,17 +138,46 @@ public class Graph {
     
     public void floyd(){
         
+        System.out.println("Floyd-Warshall's Algorithm\n");
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        int vertices = matrix[0].length;
+        int distance[][] = new int[vertices][vertices];
+        int i=0;
+        int j=0;
+        int k=0;
+
+            while(i<vertices)
+            {
+                distance[i][j]=matrix[i][j];
+                j++;
+                if(j==vertices)
+                {
+                    i++;
+                    j=0;
+                }
+            }
+        for (k=0; k < vertices; k++)
+        {
+            for (i = 0; i < vertices; i++)
+            {
+                for (j = 0; j < vertices; j++)
+                {
+                    if (i==j) {
+                        distance[i][j] = 0;
+                    }
+                    if (distance[i][k] + distance[k][j] < distance[i][j])
+                    {
+                        System.out.println("before number has been changed () are path");
+                        printMatrix(distance,i,j,k);
+                        distance[i][j] = distance[i][k] + distance[k][j];
+                        System.out.println("after number has been changed");
+                        printMatrix(distance,i,j,k);
+
+                    }
+
+                }
+            }
+        }     
     }
     
     public boolean queueEmpty(){
@@ -201,6 +230,38 @@ public class Graph {
             }
             System.out.println();
         } 
+        System.out.println();
+    }
+    
+    private boolean numToChange=false;
+    
+    public void printMatrix(int[][] array,int a,int b,int c) {
+        for(int i = 0; i < array.length; ++i) {
+            System.out.print(" ");
+
+            for(int j = 0; j < array.length; ++j) {
+                if(i==a && j==b || i==a && j==c || i==c && j==b) {
+                    if(j!=b || i!=a) {
+                        System.out.print("(" + array[i][j] + ")");
+                        numToChange = true;
+                    }
+                    else if(j==array.length-1) {
+                        System.out.print("[" + array[i][j] + "]");
+                        numToChange =true;
+                    }
+                    else
+                    System.out.print("[" + array[i][j] + "]");
+                    numToChange =false;
+                }
+                else
+                System.out.print(array[i][j] + " ");
+                numToChange =false;
+            }
+            if (!numToChange) {
+                System.out.println();
+            }
+        }
+        if(!numToChange)
         System.out.println();
     }
 }

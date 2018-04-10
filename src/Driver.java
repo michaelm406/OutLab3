@@ -7,9 +7,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /*
-Authors: Andrew Smith, Michael Miller
+Authors: Andrew Smith, Michael Miller, Dylan Lynn
 
-Date submitted: April x, 2018
+Date submitted: April 9, 2018
 
 Overview: Program takes input from input file (input.txt) in the project directory
 and creates different graphs with given adjacency matrix. This graphs are implemented 
